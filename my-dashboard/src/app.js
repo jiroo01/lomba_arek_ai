@@ -92,3 +92,4 @@ function simpanAbsensi(nama) {
 
     alert("Absensi berhasil disimpan!");
 }
+.

@@ -197,3 +197,4 @@ function loadAnalytics() {
     document.getElementById("totalChat").innerText =
         JSON.parse(localStorage.getItem("chatCount") || "0");
 }
+.
