@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Dashboard ANAGEN</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="dashboard">
+
+    <h1>Dashboard Admin ANAGEN</h1>
+
+    <!-- MENU -->
+    <div class="menu">
+        <button onclick="showPage('absensi')">Data Absensi</button>
+        <button onclick="showPage('nilai')">Nilai & Rapot</button>
+        <button onclick="showPage('knowledge')">Knowledge AI</button>
+        <button onclick="showPage('analytics')">Analytics Chatbot</button>
+    </div>
+
+    <!-- PAGE: ABSENSI -->
+    <div class="page" id="absensi">
+        <h2>Data Kehadiran</h2>
+        <table id="absensiTable">
+            <tr><th>Nama</th><th>Tanggal</th><th>Status</th></tr>
+        </table>
+    </div>
+
+    <!-- PAGE: NILAI -->
+    <div class="page" id="nilai" style="display:none;">
+        <h2>Nilai & Rapot</h2>
+        <table id="nilaiTable">
+            <tr><th>Nama</th><th>Mapel</th><th>Nilai</th></tr>
+        </table>
+    </div>
+
+   <div id="knowledge" class="page" style="display:none; padding:20px;">
+    <h2>Knowledge AI & Data Siswa</h2>
+    <p>Semua data di bawah ini akan digunakan oleh AI ANAGEN untuk menjawab pertanyaan dan menganalisa performa siswa.</p>
+
+    <hr>
+
+    <!-- ==========================
+         BAGIAN A: DATA SISWA
+    =========================== -->
+    <h3>📘 Data Siswa</h3>
+
+    <form id="formTambahSiswa" enctype="multipart/form-data" style="margin-bottom:20px;">
+        <input type="text" id="namaSiswa" placeholder="Nama Siswa" required>
+        <input type="text" id="nisSiswa" placeholder="NIS" required>
+        <input type="text" id="kelasSiswa" placeholder="Kelas" required>
+        <input type="file" id="fotoSiswa" accept="image/*" required>
+        <button type="submit">Tambah Siswa</button>
+    </form>
+
+    <table border="1" width="100%" id="tabelSiswa">
+        <thead>
+            <tr>
+                <th>Foto</th>
+                <th>Nama</th>
+                <th>NIS</th>
+                <th>Kelas</th>
+                <th>Aksi</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+
+    <hr>
+
+    <!-- ==========================
+         BAGIAN B: KNOWLEDGE AI
+    =========================== -->
+    <h3>🧠 Knowledge Base AI</h3>
+
+    <textarea id="knowledgeText" rows="6" style="width:100%;" 
+        placeholder="Tambahkan informasi penting bagi AI..."></textarea>
+    <button onclick="simpanKnowledge()">Simpan Knowledge</button>
+
+    <p><i>AI akan menggunakan data ini + data siswa untuk menjawab pertanyaan.</i></p>
+
+</div>
+
+    <!-- PAGE: ANALYTICS -->
+    <div class="page" id="analytics" style="display:none;">
+        <h2>Analytics Chatbot</h2>
+        <p>Total Pertanyaan: <span id="totalChat"></span></p>
+    </div>
+
+</div>
+
+<script src="dashboard.js"></script>
+</body>
+</html>
