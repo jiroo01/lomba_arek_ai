@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import logoAbsen from '/logo_absen.png'
+import Sidebar from './Sidebar';
 
 function App() {
   const [count, setCount] = useState(0)
@@ -8,23 +9,7 @@ function App() {
   return (
     <>
       <div className="min-h-screen bg-gray-100 flex">
-        {/* Sidebar */}
-        <div className="w-64 bg-gray-800 text-white p-4">
-          <h2 className="text-2xl font-bold mb-6">Dashboard</h2>
-          <nav>
-            <ul>
-              <li className="mb-2">
-                <a href="#" className="block py-2 px-4 rounded hover:bg-gray-700">Home</a>
-              </li>
-              <li className="mb-2">
-                <a href="#" className="block py-2 px-4 rounded hover:bg-gray-700">Analytics</a>
-              </li>
-              <li className="mb-2">
-                <a href="#" className="block py-2 px-4 rounded hover:bg-gray-700">Settings</a>
-              </li>
-            </ul>
-          </nav>
-        </div>
+        <Sidebar />
 
         {/* Main Content */}
         <div className="flex-1 p-6">
